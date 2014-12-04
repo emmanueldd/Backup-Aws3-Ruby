@@ -27,15 +27,15 @@ entries = 0
 	unless filename.index('.') == nil
 		i += 1
 		puts '['+i.to_s+'/'+entries.to_s+'] creates file : '+dirname+'/'+filename
-		# fix me ! Attention, si un fichier n'a pas d'extension, ça fail
+		# fix me ! Be carefull, if you got files with no extensions
 		unless File.exist?(dirname+'/'+filename)
 			File.open(dirname+'/'+filename, "w+") do |f|
-            			if f.write(obj.read)
-					puts 'success'
+            	if f.write(obj.read)
+					puts 'Success'
 				else
-					puts 'fail'
+					puts 'Fail'
 				end
-        		end
+        	end
 		else
 			puts 'Already exists'
 		end
